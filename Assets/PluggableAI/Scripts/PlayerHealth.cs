@@ -15,7 +15,6 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public Slider Healthbar;
     public Text messagetext;
-    public Slider healthSlider;
     public Image damageImage;
     //public AudioClip deathClip;
     NavMeshAgent agent;
@@ -79,7 +78,6 @@ public class PlayerHealth : MonoBehaviour
 
             Healthbar.value -= amount;
       
-        healthSlider.value = currentHealth;
 
         //playerAudio.Play ();
 
