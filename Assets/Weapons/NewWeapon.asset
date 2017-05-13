@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6916ce179a1ff4a98671a3191cafc2, type: 3}
+  m_Name: NewWeapon
+  m_EditorClassIdentifier: 
+  weaponName: Weapon Name Here
+  damage: 5
+  range: 50
+  currentAmmo: 148
+  maxClip: 155
+  totalAmmo: 22871
+  timeBetweenBullets: 0.15
+  reload: 2.5
