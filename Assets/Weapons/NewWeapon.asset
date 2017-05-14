@@ -14,8 +14,8 @@ MonoBehaviour:
   weaponName: Weapon Name Here
   damage: 5
   range: 50
-  currentAmmo: 148
-  maxClip: 155
+  currentAmmo: 78
+  maxClip: 20
   totalAmmo: 22871
   timeBetweenBullets: 0.15
   reload: 2.5
