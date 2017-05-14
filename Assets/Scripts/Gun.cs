@@ -34,6 +34,7 @@ public class Gun : MonoBehaviour
     //public AudioClip reloadSound;
 
     private Transform maincamera;
+	Animator anim;
 
     // Use this for initialization
 
@@ -45,6 +46,7 @@ public class Gun : MonoBehaviour
         gunParticles = GetComponent<ParticleSystem>();
         myAudioSource = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
+		anim = GameObject.FindGameObjectWithTag ("Gun").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -104,6 +106,7 @@ public class Gun : MonoBehaviour
         timer = 0f;
 
         gunLight.enabled = true;
+		anim.SetTrigger ("shoot");
 
         gunParticles.Stop();
         gunParticles.Play();
@@ -142,6 +145,7 @@ public class Gun : MonoBehaviour
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
         reloading = true;
+		anim.SetTrigger ("reload");
         yield return new WaitForSeconds(weapons[currentWeapon].reload);
 
         if (test.totalAmmo > weapons[currentWeapon].maxClip)
