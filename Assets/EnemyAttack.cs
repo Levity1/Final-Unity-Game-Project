@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
-      //  anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -33,6 +33,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... the player is in range.
             playerInRange = true;
+			anim.SetBool ("isWalking", false);
         }
     }
 
@@ -44,6 +45,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... the player is no longer in range.
             playerInRange = false;
+			anim.SetBool ("isWalking", true);
         }
     }
 
@@ -78,6 +80,7 @@ public class EnemyAttack : MonoBehaviour
         if (playerHealth.currentHealth > 0)
         {
             // ... damage the player.
+			anim.SetTrigger("attack");
             playerHealth.TakeDamage(attackDamage);
         }
     }
