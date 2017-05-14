@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {/*
-
+   
     public int damage = 50;
     public int currentAmmo = 2;
     public int maxClip = 10;
@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour
     public float range = 50;
     public float reload = 1f;
     */
+    AMMOTEST test;
+    public GameObject guntest;
     private bool reloading = false;
     private bool swap = false;
     public NewGuns[] weapons;
@@ -50,21 +52,22 @@ public class Gun : MonoBehaviour
     //Shoot and play particle effects on click
     void Update()
     {
-
+        guntest = GameObject.FindGameObjectWithTag("Gun");
+        test = guntest.GetComponent<AMMOTEST>();
         timer += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && weapons[currentWeapon].currentAmmo > 0)
+        if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0)
         {
-            if (weapons[currentWeapon].currentAmmo > 0)
+            if (test.currentAmmo > 0)
                 Shoot();
-            else if (weapons[currentWeapon].totalAmmo > 0)
+            else if (test.totalAmmo > 0)
                 Reload();
         }
-        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && weapons[currentWeapon].currentAmmo > 0 && currentWeapon == 1)
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 1)
         {
-            if (weapons[currentWeapon].currentAmmo > 0)
+            if (test.currentAmmo > 0)
                 Shoot();
-            else if (weapons[currentWeapon].totalAmmo > 0)
+            else if (test.totalAmmo > 0)
                 Reload();
         }
 
@@ -73,7 +76,7 @@ public class Gun : MonoBehaviour
             DisableEffects();
         }
 
-        if (Input.GetButtonDown("Reload") && weapons[currentWeapon].currentAmmo != weapons[currentWeapon].maxClip)
+        if (Input.GetButtonDown("Reload") && test.currentAmmo != weapons[currentWeapon].maxClip)
         {
             Reload();
         }
@@ -125,7 +128,7 @@ public class Gun : MonoBehaviour
         }
 
         myAudioSource.PlayOneShot(shootSound);
-        weapons[currentWeapon].currentAmmo--;
+        test.currentAmmo--;
     }
     //Reload the clip when not already reloading
     void Reload()
@@ -141,25 +144,25 @@ public class Gun : MonoBehaviour
         reloading = true;
         yield return new WaitForSeconds(weapons[currentWeapon].reload);
 
-        if (weapons[currentWeapon].totalAmmo > weapons[currentWeapon].maxClip)
+        if (test.totalAmmo > weapons[currentWeapon].maxClip)
         {
-            weapons[currentWeapon].totalAmmo += weapons[currentWeapon].currentAmmo;
-            weapons[currentWeapon].currentAmmo = weapons[currentWeapon].maxClip;
-            weapons[currentWeapon].totalAmmo -= weapons[currentWeapon].maxClip;
+            test.totalAmmo += test.currentAmmo;
+            test.currentAmmo = weapons[currentWeapon].maxClip;
+           test.totalAmmo -= weapons[currentWeapon].maxClip;
         }
         //Makes sure the currentAmmo isn't greater than the maxClip
-        if (weapons[currentWeapon].currentAmmo + weapons[currentWeapon].totalAmmo > weapons[currentWeapon].maxClip)
+        if (test.currentAmmo + test.totalAmmo > weapons[currentWeapon].maxClip)
         {
-            weapons[currentWeapon].totalAmmo += weapons[currentWeapon].currentAmmo;
-            weapons[currentWeapon].currentAmmo = weapons[currentWeapon].maxClip;
-            weapons[currentWeapon].totalAmmo -= weapons[currentWeapon].currentAmmo;
+            test.totalAmmo += test.currentAmmo;
+test.currentAmmo = weapons[currentWeapon].maxClip;
+            test.totalAmmo -= test.currentAmmo;
         }
         //Refills the rest of the ammo you have
-        else if (weapons[currentWeapon].totalAmmo <= weapons[currentWeapon].maxClip)
+        else if (test.totalAmmo <= weapons[currentWeapon].maxClip)
         {
-            weapons[currentWeapon].totalAmmo += weapons[currentWeapon].currentAmmo;
-            weapons[currentWeapon].currentAmmo = weapons[currentWeapon].totalAmmo;
-            weapons[currentWeapon].totalAmmo = 0;
+            test.totalAmmo += test.currentAmmo;
+            test.currentAmmo = test.totalAmmo;
+           test.totalAmmo = 0;
         }
         reloading = false;
     }
