@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114999871828901492}
   - component: {fileID: 65464462828121154}
   - component: {fileID: 114881419319785300}
+  - component: {fileID: 95712704381021104}
   m_Layer: 0
   m_Name: alien enemy
   m_TagString: Enemy
@@ -171,7 +172,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33671169204641588
 MeshFilter:
@@ -243,6 +243,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4, z: 0.85}
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!95 &95712704381021104
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314581075053766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3febd78443f284b4b8c4d1d8a6ba1951, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114035259797510220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,6 +335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ef2029fc68c3f44b2484df676e7047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  head: {fileID: 0}
+  lookAtTargetPosition: {x: 0, y: 0, z: 0}
+  looking: 1
+  lookAtCoolTime: 0.2
+  lookAtHeatTime: 0.2
   rotationSpeed: 10
 --- !u!136 &136232096401853216
 CapsuleCollider:
@@ -339,7 +361,6 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314581075053766}
   m_Enabled: 1
-  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -360,7 +381,6 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029734230367388}
   m_Enabled: 0
-  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
