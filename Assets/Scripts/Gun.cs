@@ -121,7 +121,7 @@ public class Gun : MonoBehaviour
         timer = 0f;
 
         gunLight.enabled = true;
-		//anim.SetTrigger ("shoot");
+		anim.SetTrigger ("shoot");
 
         gunParticles.Stop();
         gunParticles.Play();
