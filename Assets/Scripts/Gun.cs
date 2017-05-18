@@ -171,6 +171,8 @@ test.currentAmmo = weapons[currentWeapon].maxClip;
         reloading = false;
     }
 
+
+
     private IEnumerator Swap()
     {
         swap = true;
