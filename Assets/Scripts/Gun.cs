@@ -33,6 +33,7 @@ public class Gun : MonoBehaviour
 
     private AudioSource myAudioSource;
     public AudioClip shootSound;
+    public AudioClip enemyHurt;
     //public AudioClip reloadSound;
 
     private Transform maincamera;
@@ -139,6 +140,7 @@ public class Gun : MonoBehaviour
                 if (enemyHealth != null/*&&distance <= 4*/)
                 {
                     // ... the enemy should take damage.
+                    myAudioSource.PlayOneShot(enemyHurt);
                     enemyHealth.TakeDamage(weapons[currentWeapon].damage );
                 }
                 Debug.Log("We Hit");
@@ -165,22 +167,22 @@ public class Gun : MonoBehaviour
 
         if (test.totalAmmo > weapons[currentWeapon].maxClip)
         {
-            test.totalAmmo += test.currentAmmo;
-            test.currentAmmo = weapons[currentWeapon].maxClip;
+           test.totalAmmo += test.currentAmmo;
+           test.currentAmmo = weapons[currentWeapon].maxClip;
            test.totalAmmo -= weapons[currentWeapon].maxClip;
         }
         //Makes sure the currentAmmo isn't greater than the maxClip
         if (test.currentAmmo + test.totalAmmo > weapons[currentWeapon].maxClip)
         {
             test.totalAmmo += test.currentAmmo;
-test.currentAmmo = weapons[currentWeapon].maxClip;
+            test.currentAmmo = weapons[currentWeapon].maxClip;
             test.totalAmmo -= test.currentAmmo;
         }
         //Refills the rest of the ammo you have
         else if (test.totalAmmo <= weapons[currentWeapon].maxClip)
         {
-            test.totalAmmo += test.currentAmmo;
-            test.currentAmmo = test.totalAmmo;
+           test.totalAmmo += test.currentAmmo;
+           test.currentAmmo = test.totalAmmo;
            test.totalAmmo = 0;
         }
         reloading = false;

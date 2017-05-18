@@ -4656,7 +4656,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 363658498
+  randomSeed: 1880218662
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -23760,6 +23760,7 @@ MonoBehaviour:
   swapTime: 2
   gunParticles: {fileID: 0}
   shootSound: {fileID: 8300000, guid: c9496665c1fdc2241b5f1bb39bd2d713, type: 3}
+  enemyHurt: {fileID: 8300000, guid: 1429910e330516943930c3028300db95, type: 3}
 --- !u!114 &473331642
 MonoBehaviour:
   m_ObjectHideFlags: 0

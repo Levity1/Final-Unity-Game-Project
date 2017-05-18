@@ -70,8 +70,7 @@ public class EnemyHealth : MonoBehaviour
         //capsuleCollider.isTrigger = true;
 
         anim.SetTrigger("die");
-        //   enemyAudio.clip = deathClip;
-        // enemyAudio.Play();
+        enemyAudio.PlayOneShot(deathClip);
     }
 
 

@@ -14,6 +14,8 @@ public class EnemyAttack : MonoBehaviour
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    private AudioSource myAudioSource;
+    public AudioClip Hurt;
 
 
     void Awake()
@@ -23,6 +25,7 @@ public class EnemyAttack : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
 
@@ -75,7 +78,7 @@ public class EnemyAttack : MonoBehaviour
     {
         // Reset the timer.
         timer = 0f;
-
+        myAudioSource.PlayOneShot(Hurt);
         // If the player has health to lose...
         if (playerHealth.currentHealth > 0)
         {
