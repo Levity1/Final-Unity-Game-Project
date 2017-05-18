@@ -5,11 +5,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448466}
-  - component: {fileID: 3348476}
-  - component: {fileID: 2348476}
+  - 4: {fileID: 448466}
+  - 33: {fileID: 3348476}
+  - 23: {fileID: 2348476}
   m_Layer: 0
   m_Name: obj_trlight1
   m_TagString: Untagged
@@ -22,9 +22,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448468}
+  - 4: {fileID: 448468}
   m_Layer: 0
   m_Name: obj_trlight1
   m_TagString: Untagged
@@ -37,9 +37,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448470}
+  - 4: {fileID: 448470}
   m_Layer: 0
   m_Name: Colliders
   m_TagString: Untagged
@@ -52,10 +52,10 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448472}
-  - component: {fileID: 6548472}
+  - 4: {fileID: 448472}
+  - 65: {fileID: 6548472}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -68,10 +68,10 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448474}
-  - component: {fileID: 6548474}
+  - 4: {fileID: 448474}
+  - 65: {fileID: 6548474}
   m_Layer: 0
   m_Name: Hood
   m_TagString: Untagged
@@ -84,10 +84,10 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448476}
-  - component: {fileID: 6548476}
+  - 4: {fileID: 448476}
+  - 65: {fileID: 6548476}
   m_Layer: 0
   m_Name: Hood
   m_TagString: Untagged
@@ -101,13 +101,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148466}
-  m_LocalRotation: {x: 0.000000030908623, y: 0.7071068, z: 0.7071068, w: -0.000000030908623}
-  m_LocalPosition: {x: -0.05, y: 0.05, z: 0.05}
+  m_LocalRotation: {x: 3.09086232e-08, y: .707106829, z: .707106829, w: -3.09086232e-08}
+  m_LocalPosition: {x: -.0500000007, y: .0500000007, z: .0500000007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 448468}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448468
 Transform:
   m_ObjectHideFlags: 1
@@ -122,15 +121,14 @@ Transform:
   - {fileID: 448470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448470
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148470}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: 0, y: 0, z: .100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448472}
@@ -138,7 +136,6 @@ Transform:
   - {fileID: 448476}
   m_Father: {fileID: 448468}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448472
 Transform:
   m_ObjectHideFlags: 1
@@ -151,7 +148,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448470}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448474
 Transform:
   m_ObjectHideFlags: 1
@@ -164,7 +160,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448470}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448476
 Transform:
   m_ObjectHideFlags: 1
@@ -177,9 +172,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448470}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2348476
-MeshRenderer:
+Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -187,26 +181,15 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 4e19fecd41da44cb8acf365af06ea6b5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!33 &3348476
@@ -226,8 +209,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.39999998, y: 0.7999999, z: 0.4}
-  m_Center: {x: 0, y: 0.4, z: 0.10000001}
+  m_Size: {x: .399999976, y: .799999893, z: .400000006}
+  m_Center: {x: 0, y: .400000006, z: .100000009}
 --- !u!65 &6548474
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -238,8 +221,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19999999, y: 0.49999988, z: 0.6}
-  m_Center: {x: 0.0000000037252903, y: 0.45, z: 0.099999994}
+  m_Size: {x: .199999988, y: .499999881, z: .600000024}
+  m_Center: {x: 3.7252903e-09, y: .449999988, z: .099999994}
 --- !u!65 &6548476
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -250,8 +233,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.49999988, z: 0.19999997}
-  m_Center: {x: 0, y: 0.45, z: 0.09999999}
+  m_Size: {x: .600000024, y: .499999881, z: .199999973}
+  m_Center: {x: 0, y: .449999988, z: .0999999866}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -263,3 +246,4 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148468}
   m_IsPrefabParent: 1
+  m_IsExploded: 1

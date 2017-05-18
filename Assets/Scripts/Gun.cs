@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     public float range = 50;
     public float reload = 1f;
     */
-    public Text text; 
+    public Text text;
     AMMOTEST test;
     public GameObject guntest;
     private bool reloading = false;
@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
     //public AudioClip reloadSound;
 
     private Transform maincamera;
-	Animator anim;
+    Animator anim;
 
     // Use this for initialization
 
@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
         shootableMask = LayerMask.GetMask("Shootable");
         myAudioSource = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
-		anim = GameObject.FindGameObjectWithTag ("Gun").GetComponent<Animator>();
+        anim = GameObject.FindGameObjectWithTag("Gun").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -62,25 +62,25 @@ public class Gun : MonoBehaviour
         timer += Time.deltaTime;
         gunParticles = GetComponentInChildren<ParticleSystem>();
 
-        if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0)
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 0)
         {
             if (test.currentAmmo > 0)
                 Shoot();
-            else if (test.totalAmmo > 0)
+            if (test.currentAmmo == 0)
                 Reload();
         }
-        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 &&currentWeapon == 1 )
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 1)
         {
             if (test.currentAmmo > 0)
                 Shoot();
-            else if (test.totalAmmo > 0)
+            if (test.currentAmmo == 0)
                 Reload();
         }
-        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 &&  currentWeapon == 2)
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 2)
         {
             if (test.currentAmmo > 0)
                 Shoot();
-            else if (test.totalAmmo > 0)
+            if (test.currentAmmo == 0)
                 Reload();
         }
         if (timer >= weapons[currentWeapon].timeBetweenBullets * effectsDisplayTime)
@@ -99,7 +99,8 @@ public class Gun : MonoBehaviour
             currentWeapon = 0;
         }
 
-        if (Input.GetButtonDown("Secondary Weapon")) {
+        if (Input.GetButtonDown("Secondary Weapon"))
+        {
             StartCoroutine(Swap());
             currentWeapon = 1;
         }
@@ -122,7 +123,7 @@ public class Gun : MonoBehaviour
         timer = 0f;
 
         gunLight.enabled = true;
-		anim.SetTrigger ("shoot");
+        anim.SetTrigger("shoot");
 
         gunParticles.Stop();
         gunParticles.Play();
@@ -141,7 +142,7 @@ public class Gun : MonoBehaviour
                 {
                     // ... the enemy should take damage.
                     myAudioSource.PlayOneShot(enemyHurt);
-                    enemyHealth.TakeDamage(weapons[currentWeapon].damage );
+                    enemyHealth.TakeDamage(weapons[currentWeapon].damage);
                 }
                 Debug.Log("We Hit");
             }
@@ -162,14 +163,14 @@ public class Gun : MonoBehaviour
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
         reloading = true;
-		anim.SetTrigger ("reload");
+        anim.SetTrigger("reload");
         yield return new WaitForSeconds(weapons[currentWeapon].reload);
 
         if (test.totalAmmo > weapons[currentWeapon].maxClip)
         {
-           test.totalAmmo += test.currentAmmo;
-           test.currentAmmo = weapons[currentWeapon].maxClip;
-           test.totalAmmo -= weapons[currentWeapon].maxClip;
+            test.totalAmmo += test.currentAmmo;
+            test.currentAmmo = weapons[currentWeapon].maxClip;
+            test.totalAmmo -= weapons[currentWeapon].maxClip;
         }
         //Makes sure the currentAmmo isn't greater than the maxClip
         if (test.currentAmmo + test.totalAmmo > weapons[currentWeapon].maxClip)
@@ -181,9 +182,9 @@ public class Gun : MonoBehaviour
         //Refills the rest of the ammo you have
         else if (test.totalAmmo <= weapons[currentWeapon].maxClip)
         {
-           test.totalAmmo += test.currentAmmo;
-           test.currentAmmo = test.totalAmmo;
-           test.totalAmmo = 0;
+            test.totalAmmo += test.currentAmmo;
+            test.currentAmmo = test.totalAmmo;
+            test.totalAmmo = 0;
         }
         reloading = false;
     }

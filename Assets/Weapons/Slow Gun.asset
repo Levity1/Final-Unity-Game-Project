@@ -18,4 +18,4 @@ MonoBehaviour:
   maxClip: 5
   totalAmmo: 4980
   timeBetweenBullets: 0.6
-  reload: 2
+  reload: 4
