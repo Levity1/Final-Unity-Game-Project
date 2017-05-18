@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {/*
@@ -13,6 +14,7 @@ public class Gun : MonoBehaviour
     public float range = 50;
     public float reload = 1f;
     */
+    public Text text; 
     AMMOTEST test;
     public GameObject guntest;
     private bool reloading = false;
@@ -24,7 +26,7 @@ public class Gun : MonoBehaviour
     public int swapTime = 2;
 
     float timer;
-    ParticleSystem gunParticles;
+    public ParticleSystem gunParticles;
     Light gunLight;
     float effectsDisplayTime = 0.2f;
     int shootableMask;
@@ -41,9 +43,9 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
+        text.text = "";
         maincamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         shootableMask = LayerMask.GetMask("Shootable");
-        gunParticles = GetComponent<ParticleSystem>();
         myAudioSource = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
 		anim = GameObject.FindGameObjectWithTag ("Gun").GetComponent<Animator>();
@@ -57,6 +59,7 @@ public class Gun : MonoBehaviour
         guntest = GameObject.FindGameObjectWithTag("Gun");
         test = guntest.GetComponent<AMMOTEST>();
         timer += Time.deltaTime;
+        gunParticles = GetComponentInChildren<ParticleSystem>();
 
         if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0)
         {
@@ -104,6 +107,7 @@ public class Gun : MonoBehaviour
             StartCoroutine(Swap());
             currentWeapon = 2;
         }
+        text.text = test.currentAmmo + " / " + test.totalAmmo;
     }
 
     public void DisableEffects()
@@ -117,7 +121,7 @@ public class Gun : MonoBehaviour
         timer = 0f;
 
         gunLight.enabled = true;
-		anim.SetTrigger ("shoot");
+		//anim.SetTrigger ("shoot");
 
         gunParticles.Stop();
         gunParticles.Play();
@@ -190,4 +194,5 @@ test.currentAmmo = weapons[currentWeapon].maxClip;
         yield return new WaitForSeconds(swapTime);
         swap = false;
     }
+
 }
