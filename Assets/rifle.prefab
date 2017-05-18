@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1498417215431606}
+  m_RootGameObject: {fileID: 1014527178192988}
   m_IsPrefabParent: 1
---- !u!1 &1498417215431606
+--- !u!1 &1014527178192988
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4275056158166820}
-  - component: {fileID: 33983770419684352}
-  - component: {fileID: 23366695487670048}
-  - component: {fileID: 114000115444290332}
+  - component: {fileID: 4749134731963264}
+  - component: {fileID: 33342906071431570}
+  - component: {fileID: 23223935708236446}
+  - component: {fileID: 114479952490168604}
   m_Layer: 0
-  m_Name: uzithing
+  m_Name: rifle
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4275056158166820
+--- !u!4 &4749134731963264
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498417215431606}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.014487028, y: -0.024507165, z: -0.14803696}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_GameObject: {fileID: 1014527178192988}
+  m_LocalRotation: {x: -0.69391507, y: -0.13535266, z: -0.13530539, w: 0.69415706}
+  m_LocalPosition: {x: 0.1188, y: -0.122, z: -0.196}
+  m_LocalScale: {x: 12, y: 5, z: 12}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!23 &23366695487670048
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -22.060001}
+--- !u!23 &23223935708236446
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498417215431606}
+  m_GameObject: {fileID: 1014527178192988}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -55,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 841ba25a11b9c4b4a872c164145d796a, type: 2}
+  - {fileID: 2100000, guid: 939d3dbb621f5da47998b59afa2056fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,23 +73,23 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33983770419684352
+--- !u!33 &33342906071431570
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498417215431606}
-  m_Mesh: {fileID: 4300000, guid: 8840e6dbcedfc4d4ea3feac357bbd0db, type: 3}
---- !u!114 &114000115444290332
+  m_GameObject: {fileID: 1014527178192988}
+  m_Mesh: {fileID: 4300000, guid: 2bebca113f5955c4fa44936d6258c13e, type: 3}
+--- !u!114 &114479952490168604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498417215431606}
+  m_GameObject: {fileID: 1014527178192988}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9744edd5219c2d24dbe8eb62f8c8136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalAmmo: 100
-  currentAmmo: 20
+  totalAmmo: 70
+  currentAmmo: 15

@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4768510673506540}
   - component: {fileID: 33632883423423340}
   - component: {fileID: 23769501351968364}
+  - component: {fileID: 95753586592886334}
+  - component: {fileID: 114644732376014468}
   m_Layer: 0
   m_Name: pistolgun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1658066459167036}
-  m_LocalRotation: {x: -0.70031255, y: -0.09778726, z: -0.09778726, w: 0.70031255}
-  m_LocalPosition: {x: 0.358, y: -0.214, z: 0.669}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.05, z: -0.22}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!23 &23769501351968364
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -79,3 +81,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1658066459167036}
   m_Mesh: {fileID: 4300000, guid: 84901dbddebce3746ac94d7af0b7c64b, type: 3}
+--- !u!95 &95753586592886334
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658066459167036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6161cd4326fa42bc9c34a3e0fd7d824, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114644732376014468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658066459167036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9744edd5219c2d24dbe8eb62f8c8136b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalAmmo: 50
+  currentAmmo: 12

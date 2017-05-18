@@ -25,7 +25,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+      second: {r: 0.6911765, g: 0.447372, b: 0.31509516, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

@@ -11,6 +11,8 @@ public class ChangeWeapons : MonoBehaviour {
     public GameObject[] weapons;
     AMMOTEST ammo1;
     AMMOTEST ammo2;
+    AMMOTEST ammo3;
+
     public GameObject guntest;
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,8 @@ public class ChangeWeapons : MonoBehaviour {
        gun = guntest.GetComponent<Gun>();
         ammo1 = weapons[0].GetComponent<AMMOTEST>();
         ammo2 = weapons[1].GetComponent<AMMOTEST>();
+        ammo3 = weapons[2].GetComponent<AMMOTEST>();
+
         SelectWeapon(1);
 	}
 	
@@ -25,9 +29,10 @@ public class ChangeWeapons : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Primary Weapon")) SelectWeapon(0);
         if (Input.GetButtonDown("Secondary Weapon")) SelectWeapon(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) SelectWeapon(2);
 
     }
-   public void SelectWeapon(int index)
+    public void SelectWeapon(int index)
     {
 
         foreach (GameObject weapon in weapons) { weapon.SetActive(false); }
@@ -37,8 +42,11 @@ public class ChangeWeapons : MonoBehaviour {
     {        
             ammo1.totalAmmo += 20;
             ammo2.totalAmmo += 40;
+            ammo3.totalAmmo += 30;
+
         if (ammo1.totalAmmo > 100) ammo1.totalAmmo = 100;
         if (ammo1.totalAmmo > 200) ammo1.totalAmmo = 200;
+        if (ammo1.totalAmmo > 150) ammo1.totalAmmo = 150;
 
         //   SelectWeapon(1);
         //  gun.AddAmmo();

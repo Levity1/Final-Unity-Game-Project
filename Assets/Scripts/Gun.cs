@@ -65,14 +65,20 @@ public class Gun : MonoBehaviour
             else if (test.totalAmmo > 0)
                 Reload();
         }
-        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 1)
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 &&currentWeapon == 1 )
         {
             if (test.currentAmmo > 0)
                 Shoot();
             else if (test.totalAmmo > 0)
                 Reload();
         }
-
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 &&  currentWeapon == 2)
+        {
+            if (test.currentAmmo > 0)
+                Shoot();
+            else if (test.totalAmmo > 0)
+                Reload();
+        }
         if (timer >= weapons[currentWeapon].timeBetweenBullets * effectsDisplayTime)
         {
             DisableEffects();
@@ -92,6 +98,11 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown("Secondary Weapon")) {
             StartCoroutine(Swap());
             currentWeapon = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            StartCoroutine(Swap());
+            currentWeapon = 2;
         }
     }
 

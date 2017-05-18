@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: Slow Gun
   m_EditorClassIdentifier: 
   weaponName: Slow Gun
-  damage: 85
+  damage: 30
   range: 80
   currentAmmo: 446
   maxClip: 5
   totalAmmo: 4980
-  timeBetweenBullets: 0.5
+  timeBetweenBullets: 0.6
   reload: 2
