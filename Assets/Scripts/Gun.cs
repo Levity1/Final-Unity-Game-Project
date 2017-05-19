@@ -68,7 +68,7 @@ public class Gun : MonoBehaviour
             if (test.currentAmmo > 0)
             {
                 Shoot();
-                anim.SetTrigger("shoot");
+                anim.SetTrigger("shoot_pistol");
             }
 
             if (test.currentAmmo == 0)
@@ -79,6 +79,7 @@ public class Gun : MonoBehaviour
             if (test.currentAmmo > 0)
             {
                 Shoot();
+                anim.SetTrigger("uzi_shoot");
             }
             if (test.currentAmmo == 0)
                 Reload();
@@ -104,19 +105,22 @@ public class Gun : MonoBehaviour
             Reload();
         }
 
-        if (Input.GetButtonDown("Primary Weapon"))
+        if (reloading != true && Input.GetButtonDown("Primary Weapon"))
         {
+            myAudioSource.Stop();
             StartCoroutine(Swap());
             currentWeapon = 0;
         }
 
-        if (Input.GetButtonDown("Secondary Weapon"))
+        if (reloading != true && Input.GetButtonDown("Secondary Weapon"))
         {
+            myAudioSource.Stop();
             StartCoroutine(Swap());
             currentWeapon = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
+        if (reloading != true && Input.GetKeyDown(KeyCode.Alpha3))
+        {   
+            myAudioSource.Stop();
             StartCoroutine(Swap());
             currentWeapon = 2;
         }
@@ -177,10 +181,18 @@ public class Gun : MonoBehaviour
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
         reloading = true;
-        anim.SetTrigger("reload");
+
+        anim.SetTrigger("uzi_reload");
+
+
+        if (currentWeapon == 1)
+        {
+        //    anim.SetTrigger("reload");
+        }
 
         if (currentWeapon == 2)
         {
+      //      anim.SetTrigger("reload_rifle");
             myAudioSource.PlayOneShot(reload_rifle);
         }
 
