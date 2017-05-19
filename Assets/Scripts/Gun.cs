@@ -34,6 +34,7 @@ public class Gun : MonoBehaviour
     private AudioSource myAudioSource;
     public AudioClip shootSound;
     public AudioClip enemyHurt;
+    public AudioClip reload_rifle;
     //public AudioClip reloadSound;
 
     private Transform maincamera;
@@ -86,8 +87,8 @@ public class Gun : MonoBehaviour
         {
             if (test.currentAmmo > 0)
             {
-                anim.SetTrigger("rifle_shoot");
                 Shoot();
+                anim.SetTrigger("rifle_shoot");
             }
             if (test.currentAmmo == 0)
                 Reload();
@@ -147,7 +148,7 @@ public class Gun : MonoBehaviour
                 controller = hit.transform.gameObject;
 
                 EnemyHealth enemyHealth = controller.GetComponent<EnemyHealth>();
-                if (enemyHealth != null/*&&distance <= 4*/)
+                if (enemyHealth.currentHealth > 0/*&&distance <= 4*/)
                 {
                     // ... the enemy should take damage.
                     
@@ -177,7 +178,14 @@ public class Gun : MonoBehaviour
     {   //Refills maximum amount of ammo
         reloading = true;
         anim.SetTrigger("reload");
+
+        if (currentWeapon == 2)
+        {
+            myAudioSource.PlayOneShot(reload_rifle);
+        }
+
         yield return new WaitForSeconds(weapons[currentWeapon].reload);
+
 
         if (test.totalAmmo > weapons[currentWeapon].maxClip)
         {

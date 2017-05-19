@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6916ce179a1ff4a98671a3191cafc2, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  weaponName: Weapon Name Here
-  damage: 10
+  weaponName: Slow Gun, Kills in 2 Hits
+  damage: 50
   range: 50
   currentAmmo: 438
   maxClip: 12
   totalAmmo: 1329
-  timeBetweenBullets: 0.4
+  timeBetweenBullets: 0.5
   reload: 3

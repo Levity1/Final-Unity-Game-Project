@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6916ce179a1ff4a98671a3191cafc2, type: 3}
   m_Name: Uzi
   m_EditorClassIdentifier: 
-  weaponName: Weapon Name Here
-  damage: 3
+  weaponName: Default Gun, Kills in 4
+  damage: 25
   range: 50
   currentAmmo: 78
-  maxClip: 20
+  maxClip: 12
   totalAmmo: 22871
-  timeBetweenBullets: 0.15
-  reload: 2.5
+  timeBetweenBullets: 0.2
+  reload: 2

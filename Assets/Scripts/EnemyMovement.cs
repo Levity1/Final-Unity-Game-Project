@@ -58,14 +58,14 @@ public class EnemyMovement : MonoBehaviour
         {
             // ... disable the nav mesh agent.
             nav.enabled = false;
-			anim.SetBool ("isWalking", false);
+			//anim.SetBool ("isWalking", false);
         }
     }
 
 	private void MoveTowards(Transform target)
 	{
 		nav.SetDestination(target.position);
-		anim.SetBool ("isWalking", true);
+		//anim.SetBool ("isWalking", true);
 	}
 
 	private void RotateTowards(Transform target)
