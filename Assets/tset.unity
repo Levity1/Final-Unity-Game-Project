@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1020558743}
-  enemy: {fileID: 1314581075053766, guid: c5bc7dff442cdcf468ed79c75fd51555, type: 2}
+  enemy: {fileID: 1878515757115386, guid: edae30a593368ec41b1d38ed128f21b4, type: 2}
   spawnTime: 8
   spawnPoints:
   - {fileID: 1209230335}
@@ -20466,7 +20466,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 92144504
+  randomSeed: 1922325625
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -27991,7 +27991,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 14206898
+  randomSeed: 2001590709
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -42311,11 +42311,6 @@ Prefab:
     - target: {fileID: 4080547134062060, guid: edae30a593368ec41b1d38ed128f21b4, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 195543572965929538, guid: edae30a593368ec41b1d38ed128f21b4,
-        type: 2}
-      propertyPath: m_StoppingDistance
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edae30a593368ec41b1d38ed128f21b4, type: 2}
@@ -59867,7 +59862,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2032810393
+  randomSeed: -1250743244
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -104519,6 +104514,10 @@ Prefab:
         type: 2}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314581075053766, guid: c5bc7dff442cdcf468ed79c75fd51555, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5bc7dff442cdcf468ed79c75fd51555, type: 2}

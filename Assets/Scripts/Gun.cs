@@ -62,7 +62,7 @@ public class Gun : MonoBehaviour
         timer += Time.deltaTime;
         gunParticles = GetComponentInChildren<ParticleSystem>();
 
-        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 0)
+        if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 0)
         {
             if (test.currentAmmo > 0)
                 Shoot();
@@ -155,8 +155,11 @@ public class Gun : MonoBehaviour
     //Reload the clip when not already reloading
     void Reload()
     {
-        if (reloading)
+        if(reloading || test.totalAmmo == 0)
+        {
             return;
+        }
+
         StartCoroutine(Reloading());
 
     }
