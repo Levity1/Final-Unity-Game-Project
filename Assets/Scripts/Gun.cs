@@ -65,24 +65,34 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 0)
         {
             if (test.currentAmmo > 0)
+            {
                 Shoot();
+                anim.SetTrigger("shoot");
+            }
+
             if (test.currentAmmo == 0)
                 Reload();
         }
         if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 1)
         {
             if (test.currentAmmo > 0)
+            {
                 Shoot();
+            }
             if (test.currentAmmo == 0)
                 Reload();
         }
         if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 2)
         {
             if (test.currentAmmo > 0)
+            {
+                anim.SetTrigger("rifle_shoot");
                 Shoot();
+            }
             if (test.currentAmmo == 0)
                 Reload();
         }
+        
         if (timer >= weapons[currentWeapon].timeBetweenBullets * effectsDisplayTime)
         {
             DisableEffects();
@@ -123,7 +133,6 @@ public class Gun : MonoBehaviour
         timer = 0f;
 
         gunLight.enabled = true;
-        anim.SetTrigger("shoot");
 
         gunParticles.Stop();
         gunParticles.Play();

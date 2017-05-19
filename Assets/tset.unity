@@ -31440,7 +31440,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8b6464b2caefccb469b4bc9894f6abc1, type: 2}
   - {fileID: 11400000, guid: 031000593644edb4298c5eeb08e48b49, type: 2}
   - {fileID: 11400000, guid: 1abb8e914afbb3d48a71fb329f027fe6, type: 2}
-  - {fileID: 11400000, guid: 6c3c9f820a3660c41849d39504858dc1, type: 2}
   currentWeapon: 1
   enemy: {fileID: 0}
   controller: {fileID: 0}
@@ -74795,7 +74794,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481688, guid: 4ef2be638dcfd4ca5a50ddf6845b8a65, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.05
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 481688, guid: 4ef2be638dcfd4ca5a50ddf6845b8a65, type: 2}
       propertyPath: m_LocalRotation.x
@@ -84674,7 +84673,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1658066459167036, guid: c4db19c8eca26354c9eb14e818581ac4, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114644732376014468, guid: c4db19c8eca26354c9eb14e818581ac4,
+        type: 2}
+      propertyPath: currentAmmo
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114644732376014468, guid: c4db19c8eca26354c9eb14e818581ac4,
+        type: 2}
+      propertyPath: totalAmmo
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4db19c8eca26354c9eb14e818581ac4, type: 2}
@@ -97300,7 +97309,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1014527178192988, guid: 4e3bb689f36ae4a4eb0cd384afb73950, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114479952490168604, guid: 4e3bb689f36ae4a4eb0cd384afb73950, type: 2}
@@ -100867,8 +100876,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9744edd5219c2d24dbe8eb62f8c8136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalAmmo: 70
-  currentAmmo: 15
+  totalAmmo: 72
+  currentAmmo: 24
+--- !u!95 &1985237184
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985237179}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8afdf3075e9fcc54da5f3707464ccc22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1990606639 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496696, guid: 4f4d79733592d482ab4849e90d1e9fb2, type: 2}
@@ -106211,7 +106237,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -929426239
+  randomSeed: -136456560
   InitialModule:
     serializedVersion: 3
     enabled: 1
