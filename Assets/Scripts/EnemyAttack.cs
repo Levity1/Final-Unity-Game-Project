@@ -36,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... the player is in range.
             playerInRange = true;
-			anim.SetBool ("isWalking", false);
+			//anim.SetBool ("isRun", false);
         }
     }
 
@@ -48,7 +48,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... the player is no longer in range.
             playerInRange = false;
-			anim.SetBool ("isWalking", true);
+			//anim.SetBool ("isRun", true);
         }
     }
 
@@ -63,6 +63,7 @@ public class EnemyAttack : MonoBehaviour
         {
             // ... attack.
             Attack();
+            anim.SetBool("isRun", true);
         }
 
         // If the player has zero or less health...
@@ -83,7 +84,10 @@ public class EnemyAttack : MonoBehaviour
         if (playerHealth.currentHealth > 0)
         {
             // ... damage the player.
-			anim.SetTrigger("attack");
+            anim.SetBool("isRun", false);
+
+            anim.SetTrigger("Hit");
+            
             playerHealth.TakeDamage(attackDamage);
         }
     }

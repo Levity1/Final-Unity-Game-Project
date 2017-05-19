@@ -50,9 +50,8 @@ public class EnemyHealth : MonoBehaviour
             return;
 
         //enemyAudio.Play();
-
         currentHealth -= amount;
-
+        anim.SetTrigger("Hurt");
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 
@@ -66,17 +65,17 @@ public class EnemyHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
-
+        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         //capsuleCollider.isTrigger = true;
-
-        anim.SetTrigger("die");
+        anim.SetBool("isRun", false);
+        anim.SetTrigger("isDead");
         enemyAudio.PlayOneShot(deathClip);
     }
 
 
     public void StartSinking()
     {
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        
         // GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
         if (startingHealth == 101)

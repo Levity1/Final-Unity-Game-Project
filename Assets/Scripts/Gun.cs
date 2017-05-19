@@ -141,6 +141,7 @@ public class Gun : MonoBehaviour
                 if (enemyHealth != null/*&&distance <= 4*/)
                 {
                     // ... the enemy should take damage.
+                    
                     myAudioSource.PlayOneShot(enemyHurt);
                     enemyHealth.TakeDamage(weapons[currentWeapon].damage);
                 }
