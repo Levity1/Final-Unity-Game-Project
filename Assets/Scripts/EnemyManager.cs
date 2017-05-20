@@ -2,18 +2,29 @@
 
 public class EnemyManager : MonoBehaviour
 {
+    public float countdown = 6;
     public PlayerHealth playerHealth;       // Reference to the player's heatlh.
     public GameObject enemy;                // The enemy prefab to be spawned.
-    public float spawnTime = 3f;            // How long between each spawn.
+    public float spawnTime = 5;            // How long between each spawn.
     public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
 
 
     void Start()
     {
+        spawnTime = countdown;
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
+    void Update()
+    {
+        if(Time.time % 60 == 0 && countdown>1)
+        {
+            countdown--;
+        }
+        spawnTime = countdown;
 
+
+    }
 
     void Spawn()
     {
