@@ -23,10 +23,12 @@ public class PlayerHealth : MonoBehaviour
  //   PlayerMovement playerMovement;
     bool isDead;
     bool damaged;
+    CharacterController charactercontroller;
 
     // Use this for initialization
     void Start()
     {
+        charactercontroller = GetComponent<CharacterController>();
     //    anim = GetComponent<Animator>();
         playerAudio = GetComponent <AudioSource> ();
      //   playerMovement = GetComponent<PlayerMovement>();
@@ -83,6 +85,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0 && !isDead)
         {
+            charactercontroller.enabled = false;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Death();
         }
