@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
     //public AudioClip reloadSound;
 
     private Transform maincamera;
-    Animator anim;
+    static Animator anim;
 
     // Use this for initialization
 
@@ -230,5 +230,9 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(swapTime);
         swap = false;
     }
+
+	public static void changeAnim(){
+		anim = 	GameObject.FindGameObjectWithTag("Gun").GetComponent<Animator>();
+	}
 
 }

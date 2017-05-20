@@ -37,6 +37,7 @@ public class ChangeWeapons : MonoBehaviour {
 
         foreach (GameObject weapon in weapons) { weapon.SetActive(false); }
         weapons[index].SetActive(true);
+		Gun.changeAnim ();
     }
    public void addAmmo()
     {        
