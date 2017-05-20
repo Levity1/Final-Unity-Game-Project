@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: afdb030747cc7304494725c2b822c831
+timeCreated: 1495286595
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Autodestruct BB
+  fontNames:
+  - Autodestruct BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 827758be487f33a4caaece5a5cd12bf6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
