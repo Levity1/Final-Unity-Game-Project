@@ -7,7 +7,7 @@ public class ZombieMovement : MonoBehaviour {
     PlayerHealth playerHealth;      // Reference to the player's health.
     EnemyHealth enemyHealth;        // Reference to this enemy's health.
     UnityEngine.AI.NavMeshAgent nav;               // Reference to the nav mesh agent.
-    Animator anim;
+   public Animator anim;
 
     public Transform head = null;
     public Vector3 lookAtTargetPosition;

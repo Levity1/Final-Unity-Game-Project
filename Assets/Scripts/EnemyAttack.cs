@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 10;               // The amount of health taken away per attack.
 
 
-    Animator anim;                              // Reference to the animator component.
+    public Animator anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
