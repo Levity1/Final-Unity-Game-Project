@@ -34,9 +34,14 @@ public class Gun : MonoBehaviour
     int shootableMask;
 
     private AudioSource myAudioSource;
+    public AudioClip pistolshootSound;
     public AudioClip shootSound;
+    public AudioClip uziSound;
+
     public AudioClip enemyHurt;
     public AudioClip reload_rifle;
+    public AudioClip reload_pistol;
+    public AudioClip reload_uzi;
     //public AudioClip reloadSound;
 
     private Transform maincamera;
@@ -166,23 +171,34 @@ public class Gun : MonoBehaviour
             }
         }
 
-        myAudioSource.PlayOneShot(shootSound);
+        if(currentWeapon==2) myAudioSource.PlayOneShot(shootSound);
+
+        if(currentWeapon ==0 )myAudioSource.PlayOneShot(pistolshootSound);
+
+
+        if (currentWeapon == 1) myAudioSource.PlayOneShot(uziSound);
         test.currentAmmo--;
     }
     //Reload the clip when not already reloading
     void Reload()
     {
-        anim.SetTrigger("reload");
-
+        if (reloading == true)
+        {
+            return;
+        }
+        reloading = true;
         StartCoroutine(Reloading());
 
     }
 
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
-        reloading = true;
-
+        anim.SetTrigger("reload");
         yield return new WaitForSeconds(weapons[currentWeapon].reload);
+
+        if(currentWeapon==2)myAudioSource.PlayOneShot(reload_rifle);
+        if (currentWeapon == 0) myAudioSource.PlayOneShot(reload_pistol);
+        if (currentWeapon == 1) myAudioSource.PlayOneShot(reload_uzi);
 
 
         if (test.totalAmmo > weapons[currentWeapon].maxClip)
