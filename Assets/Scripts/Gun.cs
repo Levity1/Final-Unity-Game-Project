@@ -194,11 +194,13 @@ public class Gun : MonoBehaviour
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
         anim.SetTrigger("reload");
-        yield return new WaitForSeconds(weapons[currentWeapon].reload);
 
-        if(currentWeapon==2)myAudioSource.PlayOneShot(reload_rifle);
+        if (currentWeapon == 2) myAudioSource.PlayOneShot(reload_rifle);
         if (currentWeapon == 0) myAudioSource.PlayOneShot(reload_pistol);
         if (currentWeapon == 1) myAudioSource.PlayOneShot(reload_uzi);
+
+        yield return new WaitForSeconds(weapons[currentWeapon].reload);
+
 
 
         if (test.totalAmmo > weapons[currentWeapon].maxClip)
