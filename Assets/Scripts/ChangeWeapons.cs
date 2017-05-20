@@ -37,7 +37,7 @@ public class ChangeWeapons : MonoBehaviour
     }
     public void SelectWeapon(int index)
     {
-
+//		GameObject.FindGameObjectWithTag ("Gun").GetComponent<Animator> ().SetTrigger ("gun_swap");
         foreach (GameObject weapon in weapons) { weapon.SetActive(false); }
         weapons[index].SetActive(true);
         Gun.changeAnim();

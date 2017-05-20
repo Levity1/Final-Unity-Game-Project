@@ -93,7 +93,8 @@ public class StartOptions : MonoBehaviour {
 		showPanels.HideMenu ();
 
 		//Load the selected scene, by scene index number in build settings
-		SceneManager.LoadScene (sceneToStart);
+		SceneManager.LoadScene (1);
+
 	}
 
 	public void HideDelayed()

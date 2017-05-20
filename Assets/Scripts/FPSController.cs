@@ -19,6 +19,7 @@ public class FPSController : MonoBehaviour {
 	void Start () {
         Screen.lockCursor = true;
         player = GetComponent<CharacterController>();
+		Time.timeScale = 1;
     }
 	
 	// Update is called once per frame

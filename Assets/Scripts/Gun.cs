@@ -110,6 +110,7 @@ public class Gun : MonoBehaviour
         if (reloading != true && Input.GetButtonDown("Primary Weapon") && pistollock == true)
         {
             myAudioSource.Stop();
+			anim.SetTrigger ("swap");
             StartCoroutine(Swap());
             currentWeapon = 0;
         }
@@ -117,12 +118,14 @@ public class Gun : MonoBehaviour
         if (reloading != true && Input.GetButtonDown("Secondary Weapon"))
         {
             myAudioSource.Stop();
+			anim.SetTrigger ("swap");
             StartCoroutine(Swap());
             currentWeapon = 1;
         }
         if (reloading != true && Input.GetKeyDown(KeyCode.Alpha3) && riflelock == true)
         {
             myAudioSource.Stop();
+			anim.SetTrigger ("swap");
             StartCoroutine(Swap());
             currentWeapon = 2;
         }
@@ -185,7 +188,7 @@ public class Gun : MonoBehaviour
     {   //Refills maximum amount of ammo
         reloading = true;
 
-        anim.SetTrigger("uzi_reload");
+        anim.SetTrigger("reload");
 
 
         if (currentWeapon == 1)
