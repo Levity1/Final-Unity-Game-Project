@@ -16,10 +16,10 @@ public class PlayerHealth : MonoBehaviour
     public Slider Healthbar;
     public Text messagetext;
     public Image damageImage;
-    //public AudioClip deathClip;
+    public AudioClip deathClip;
     NavMeshAgent agent;
     Animator anim;
-    //AudioSource playerAudio;
+    AudioSource playerAudio;
  //   PlayerMovement playerMovement;
     bool isDead;
     bool damaged;
@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
     //    anim = GetComponent<Animator>();
-        //playerAudio = GetComponent <AudioSource> ();
+        playerAudio = GetComponent <AudioSource> ();
      //   playerMovement = GetComponent<PlayerMovement>();
         //playerShooting = GetComponentInChildren <PlayerShooting> ();
         currentHealth = startingHealth;
@@ -105,8 +105,10 @@ public class PlayerHealth : MonoBehaviour
 
         //anim.SetTrigger ("Die");
 
-        //playerAudio.clip = deathClip;
-        //playerAudio.Play ();
+
+
+        playerAudio.clip = deathClip;
+        playerAudio.Play ();
 
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
