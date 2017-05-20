@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour {
 
@@ -29,8 +30,9 @@ public class GameOverManager : MonoBehaviour {
 			// .. if it reaches the restart delay...
 			if(restartTimer >= restartDelay)
 			{
+				SceneManager.LoadScene (0);
 				// .. then reload the currently loaded level.
-				Application.LoadLevel(Application.loadedLevel);
+//				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
 	}

@@ -78,4 +78,5 @@ public class EnemyMovement : MonoBehaviour
 		var targetRotation = Quaternion.LookRotation(target.position - transform.position);
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 	}
+		
 }

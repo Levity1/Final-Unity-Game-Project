@@ -19,6 +19,7 @@ public class FPSController : MonoBehaviour {
 	void Start () {
         Screen.lockCursor = true;
         player = GetComponent<CharacterController>();
+		GameObject.FindGameObjectWithTag ("background").SetActive (false);
 		Time.timeScale = 1;
     }
 	
