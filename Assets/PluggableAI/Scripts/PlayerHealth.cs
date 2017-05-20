@@ -95,12 +95,12 @@ public class PlayerHealth : MonoBehaviour
         //agent.enabled = false;
         isDead = true;
         // player.SetActive(false);
-        SceneManager.LoadScene(0);
+        /*SceneManager.LoadScene(0);
         if (Time.time >= 11)
         {
                  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-        }
+        }*/
         //playerShooting.DisableEffects ();
 
         //anim.SetTrigger ("Die");

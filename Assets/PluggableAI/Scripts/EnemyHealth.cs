@@ -70,6 +70,7 @@ public class EnemyHealth : MonoBehaviour
         anim.SetBool("isRun", false);
         anim.SetTrigger("isDead");
         enemyAudio.PlayOneShot(deathClip);
+		ScoreManager.score += scoreValue;
     }
 
 
