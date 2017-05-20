@@ -27,20 +27,22 @@ public class ChangeWeapons : MonoBehaviour
         ammo1 = weapons[0].GetComponent<AMMOTEST>();
         ammo2 = weapons[1].GetComponent<AMMOTEST>();
         ammo3 = weapons[2].GetComponent<AMMOTEST>();
-
+        buffer = 1;
         SelectWeapon(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Primary Weapon")  && gun.currentWeapon != 0) SelectWeapon(0);
-        if (Input.GetButtonDown("Secondary Weapon") && gun.currentWeapon != 1) SelectWeapon(1);
-        if (Input.GetKeyDown(KeyCode.Alpha3) && gun.riflelock == true && gun.currentWeapon != 2) SelectWeapon(2);
+        Debug.Log(weapons);
+        if (Input.GetButtonDown("Primary Weapon")  && gun.pistollock == true && buffer != 0) SelectWeapon(0);
+        if (Input.GetButtonDown("Secondary Weapon") && buffer != 1) SelectWeapon(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3) && gun.riflelock == true && buffer !=2) SelectWeapon(2);
 
     }
     public void SelectWeapon(int index)
     {
+        buffer = index;
 //		GameObject.FindGameObjectWithTag ("Gun").GetComponent<Animator> ().SetTrigger ("gun_swap");
         foreach (GameObject weapon in weapons) { weapon.SetActive(false); }
         weapons[index].SetActive(true);

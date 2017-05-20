@@ -32960,8 +32960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2c528543cb26b4da2afd446f604be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  riflelock: 0
-  pistollock: 0
+  riflelock: 1
+  pistollock: 1
   text: {fileID: 996858464}
   guntest: {fileID: 473331634}
   weapons:

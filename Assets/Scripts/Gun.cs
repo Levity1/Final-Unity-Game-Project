@@ -126,7 +126,7 @@ public class Gun : MonoBehaviour
             StartCoroutine(Swap());
             currentWeapon = 2;
         }
-        Debug.Log(test.currentAmmo);
+        Debug.Log(currentWeapon);
         text.text = test.currentAmmo + " / " + test.totalAmmo;
     }
 
