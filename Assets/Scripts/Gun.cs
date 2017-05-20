@@ -107,25 +107,22 @@ public class Gun : MonoBehaviour
             Reload();
         }
 
-        if (reloading != true && Input.GetButtonDown("Primary Weapon") && pistollock == true)
+        if (reloading != true && Input.GetButtonDown("Primary Weapon") && pistollock == true && currentWeapon != 0)
         {
             myAudioSource.Stop();
-			anim.SetTrigger ("swap");
             StartCoroutine(Swap());
             currentWeapon = 0;
         }
 
-        if (reloading != true && Input.GetButtonDown("Secondary Weapon"))
+        if (reloading != true && Input.GetButtonDown("Secondary Weapon") && currentWeapon != 1)
         {
             myAudioSource.Stop();
-			anim.SetTrigger ("swap");
             StartCoroutine(Swap());
             currentWeapon = 1;
         }
-        if (reloading != true && Input.GetKeyDown(KeyCode.Alpha3) && riflelock == true)
+        if (reloading != true && Input.GetKeyDown(KeyCode.Alpha3) && riflelock == true && currentWeapon != 2)
         {
             myAudioSource.Stop();
-			anim.SetTrigger ("swap");
             StartCoroutine(Swap());
             currentWeapon = 2;
         }
@@ -175,10 +172,7 @@ public class Gun : MonoBehaviour
     //Reload the clip when not already reloading
     void Reload()
     {
-        if (reloading || test.totalAmmo == 0)
-        {
-            return;
-        }
+        anim.SetTrigger("reload");
 
         StartCoroutine(Reloading());
 
@@ -187,20 +181,6 @@ public class Gun : MonoBehaviour
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
         reloading = true;
-
-        anim.SetTrigger("reload");
-
-
-        if (currentWeapon == 1)
-        {
-            //    anim.SetTrigger("reload");
-        }
-
-        if (currentWeapon == 2)
-        {
-            //      anim.SetTrigger("reload_rifle");
-            myAudioSource.PlayOneShot(reload_rifle);
-        }
 
         yield return new WaitForSeconds(weapons[currentWeapon].reload);
 

@@ -14,6 +14,10 @@ public class ChangeWeapons : MonoBehaviour
     AMMOTEST ammo2;
     AMMOTEST ammo3;
 
+    private AudioSource myAudioSource;
+    public AudioClip healthPickUp;
+    public AudioClip ammoPickUp;
+
     public GameObject guntest;
     // Use this for initialization
     void Start()
@@ -30,9 +34,9 @@ public class ChangeWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Primary Weapon") && gun.pistollock == true) SelectWeapon(0);
-        if (Input.GetButtonDown("Secondary Weapon")) SelectWeapon(1);
-        if (Input.GetKeyDown(KeyCode.Alpha3) && gun.riflelock == true) SelectWeapon(2);
+        if (Input.GetButtonDown("Primary Weapon")  && gun.currentWeapon != 0) SelectWeapon(0);
+        if (Input.GetButtonDown("Secondary Weapon") && gun.currentWeapon != 1) SelectWeapon(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3) && gun.riflelock == true && gun.currentWeapon != 2) SelectWeapon(2);
 
     }
     public void SelectWeapon(int index)
@@ -60,15 +64,15 @@ public class ChangeWeapons : MonoBehaviour
     {
         if (target.CompareTag("ammo"))
         {
-
+            //   myAudioSource.PlayOneShot(ammoPickUp);
+            AudioSource.PlayClipAtPoint(ammoPickUp, transform.position);
             addAmmo();
-
             Destroy(target.gameObject);
         }
         if (target.CompareTag("health"))
         {
+            AudioSource.PlayClipAtPoint(healthPickUp, transform.position);
             playerhealth.TakeDamage(-30);
-
             Destroy(target.gameObject);
         }
     }

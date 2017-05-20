@@ -32992,6 +32992,8 @@ MonoBehaviour:
   - {fileID: 1402907728}
   - {fileID: 1591305497}
   - {fileID: 1985237179}
+  healthPickUp: {fileID: 8300000, guid: c8c2b2082c965404d963d4f0dc647cac, type: 3}
+  ammoPickUp: {fileID: 8300000, guid: 51fcf928d40b7f943ba156c18dfe3280, type: 3}
   guntest: {fileID: 473331634}
 --- !u!65 &473331643
 BoxCollider:
@@ -59453,7 +59455,7 @@ MonoBehaviour:
   Healthbar: {fileID: 723739645}
   messagetext: {fileID: 0}
   damageImage: {fileID: 2031669096}
-  deathClip: {fileID: 8300000, guid: a41b46a8f8c024d95b3e00def1f95838, type: 3}
+  deathClip: {fileID: 8300000, guid: 864f09460be915d469420a462eb432fa, type: 3}
 --- !u!54 &1020558744
 Rigidbody:
   m_ObjectHideFlags: 0
