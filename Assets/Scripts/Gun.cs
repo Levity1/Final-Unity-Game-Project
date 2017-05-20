@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour
     public float range = 50;
     public float reload = 1f;
     */
+    public bool riflelock = false;
+    public bool pistollock = false;
     public Text text;
     AMMOTEST test;
     public GameObject guntest;
@@ -63,7 +65,7 @@ public class Gun : MonoBehaviour
         timer += Time.deltaTime;
         gunParticles = GetComponentInChildren<ParticleSystem>();
 
-        if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 0)
+        if (Input.GetButtonDown("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 0 && pistollock == true)
         {
             if (test.currentAmmo > 0)
             {
@@ -84,7 +86,7 @@ public class Gun : MonoBehaviour
             if (test.currentAmmo == 0)
                 Reload();
         }
-        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 2)
+        if (Input.GetButton("Fire1") && reloading != true && timer >= weapons[currentWeapon].timeBetweenBullets && swap != true && test.currentAmmo > 0 && currentWeapon == 2 && riflelock == true)
         {
             if (test.currentAmmo > 0)
             {
@@ -94,7 +96,7 @@ public class Gun : MonoBehaviour
             if (test.currentAmmo == 0)
                 Reload();
         }
-        
+
         if (timer >= weapons[currentWeapon].timeBetweenBullets * effectsDisplayTime)
         {
             DisableEffects();
@@ -105,7 +107,7 @@ public class Gun : MonoBehaviour
             Reload();
         }
 
-        if (reloading != true && Input.GetButtonDown("Primary Weapon"))
+        if (reloading != true && Input.GetButtonDown("Primary Weapon") && pistollock == true)
         {
             myAudioSource.Stop();
             StartCoroutine(Swap());
@@ -118,12 +120,13 @@ public class Gun : MonoBehaviour
             StartCoroutine(Swap());
             currentWeapon = 1;
         }
-        if (reloading != true && Input.GetKeyDown(KeyCode.Alpha3))
-        {   
+        if (reloading != true && Input.GetKeyDown(KeyCode.Alpha3) && riflelock == true)
+        {
             myAudioSource.Stop();
             StartCoroutine(Swap());
             currentWeapon = 2;
         }
+        Debug.Log(test.currentAmmo);
         text.text = test.currentAmmo + " / " + test.totalAmmo;
     }
 
@@ -155,7 +158,7 @@ public class Gun : MonoBehaviour
                 if (enemyHealth.currentHealth > 0/*&&distance <= 4*/)
                 {
                     // ... the enemy should take damage.
-                    
+
                     myAudioSource.PlayOneShot(enemyHurt);
                     enemyHealth.TakeDamage(weapons[currentWeapon].damage);
                 }
@@ -169,7 +172,7 @@ public class Gun : MonoBehaviour
     //Reload the clip when not already reloading
     void Reload()
     {
-        if(reloading || test.totalAmmo == 0)
+        if (reloading || test.totalAmmo == 0)
         {
             return;
         }
@@ -187,12 +190,12 @@ public class Gun : MonoBehaviour
 
         if (currentWeapon == 1)
         {
-        //    anim.SetTrigger("reload");
+            //    anim.SetTrigger("reload");
         }
 
         if (currentWeapon == 2)
         {
-      //      anim.SetTrigger("reload_rifle");
+            //      anim.SetTrigger("reload_rifle");
             myAudioSource.PlayOneShot(reload_rifle);
         }
 
@@ -222,7 +225,19 @@ public class Gun : MonoBehaviour
         reloading = false;
     }
 
-
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("riflepickup"))
+        {
+            Destroy(other.gameObject);
+            riflelock = true;
+        }
+        if (other.gameObject.CompareTag("pistolpickup"))
+        {
+            Destroy(other.gameObject);
+            pistollock = true;
+        }
+    }
 
     private IEnumerator Swap()
     {
@@ -231,8 +246,9 @@ public class Gun : MonoBehaviour
         swap = false;
     }
 
-	public static void changeAnim(){
-		anim = 	GameObject.FindGameObjectWithTag("Gun").GetComponent<Animator>();
-	}
+    public static void changeAnim()
+    {
+        anim = GameObject.FindGameObjectWithTag("Gun").GetComponent<Animator>();
+    }
 
 }

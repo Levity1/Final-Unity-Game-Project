@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Fire
   - Gun
+  - health
+  - ammo
+  - riflepickup
+  - pistolpickup
   layers:
   - Default
   - TransparentFX
