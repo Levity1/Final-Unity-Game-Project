@@ -64,12 +64,13 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        enemyAudio.PlayOneShot(deathClip);
         isDead = true;
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         //capsuleCollider.isTrigger = true;
         anim.SetBool("isRun", false);
         anim.SetTrigger("isDead");
-        enemyAudio.PlayOneShot(deathClip);
+       // enemyAudio.PlayOneShot(deathClip);
 		ScoreManager.score += scoreValue;
     }
 
@@ -78,7 +79,7 @@ public class EnemyHealth : MonoBehaviour
     {
         
         // GetComponent<Rigidbody>().isKinematic = true;
-        isSinking = true;
+   //     isSinking = true;
         if (startingHealth == 101)
         {
             enemy.SetActive(false);

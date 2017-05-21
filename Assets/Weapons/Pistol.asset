@@ -15,7 +15,7 @@ MonoBehaviour:
   damage: 50
   range: 50
   currentAmmo: 438
-  maxClip: 12
+  maxClip: 7
   totalAmmo: 1329
   timeBetweenBullets: 0.5
   reload: 2

@@ -26,6 +26,7 @@ public class Gun : MonoBehaviour
     public EnemyHealth enemy;
     public GameObject controller;
     public int swapTime = 2;
+    bool dead;
 
     float timer;
     public ParticleSystem gunParticles;
@@ -173,7 +174,7 @@ public class Gun : MonoBehaviour
 
         if(currentWeapon==2) myAudioSource.PlayOneShot(shootSound);
 
-        if(currentWeapon ==0 )myAudioSource.PlayOneShot(pistolshootSound);
+        if(currentWeapon ==0 ) myAudioSource.PlayOneShot(pistolshootSound);
 
 
         if (currentWeapon == 1) myAudioSource.PlayOneShot(uziSound);
@@ -182,18 +183,19 @@ public class Gun : MonoBehaviour
     //Reload the clip when not already reloading
     void Reload()
     {
-        if (reloading == true)
+        if (reloading == true || test.totalAmmo == 0)
         {
             return;
         }
+
         reloading = true;
+        anim.SetTrigger("reload");
         StartCoroutine(Reloading());
 
     }
 
     private IEnumerator Reloading()
     {   //Refills maximum amount of ammo
-        anim.SetTrigger("reload");
 
         if (currentWeapon == 2) myAudioSource.PlayOneShot(reload_rifle);
         if (currentWeapon == 0) myAudioSource.PlayOneShot(reload_pistol);

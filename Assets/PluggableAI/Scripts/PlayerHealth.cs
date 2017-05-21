@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     Animator anim;
     AudioSource playerAudio;
  //   PlayerMovement playerMovement;
-    bool isDead;
+    public bool isDead;
     bool damaged;
     CharacterController charactercontroller;
 
